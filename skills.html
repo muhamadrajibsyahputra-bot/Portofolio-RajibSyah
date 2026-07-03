@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajib | Skills</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<canvas id="starCanvas"></canvas>
+<div id="pageOverlay"></div>
+
+<nav class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-page>
+        <span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link" href="index.html" data-page><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a class="nav-link" href="about.html" data-page><i class="fa-solid fa-user"></i> Tentang</a></li>
+        <li><a class="nav-link active" href="skills.html"><i class="fa-solid fa-code"></i> Skills</a></li>
+        <li><a class="nav-link" href="projects.html" data-page><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+        <li><a class="nav-link" href="certificates.html" data-page><i class="fa-solid fa-certificate"></i> Sertifikat</a></li>
+        <li><a class="nav-link" href="contact.html" data-page><i class="fa-solid fa-envelope"></i> Kontak</a></li>
+    </ul>
+    <div class="navbar-right">
+        <button id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<div class="page-wrapper">
+    <div class="page-header reveal">
+        <div class="page-tag"><i class="fa-solid fa-code"></i> &nbsp;Skills</div>
+        <h1>Keahlian <span>Teknis</span></h1>
+        <p>Teknologi yang saya kuasai di bidang jaringan, server, dan cloud</p>
+    </div>
+
+    <div class="section-content">
+        <div class="skills-grid reveal">
+            <div class="skill-card">
+                <div class="skill-card-icon" style="background:linear-gradient(135deg,#1a6fd4,#0f4fa8);">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+                <h4>Networking</h4>
+                <p>VLAN, Routing, Switching, TCP/IP, OSI Model</p>
+                <div class="skill-bar-wrap">
+                    <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                    <span class="skill-pct">90%</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon" style="background:linear-gradient(135deg,#ef4444,#b91c1c);">
+                    <i class="fa-solid fa-router"></i>
+                </div>
+                <h4>MikroTik</h4>
+                <p>RouterOS, Winbox, Firewall, Hotspot, Bandwidth</p>
+                <div class="skill-bar-wrap">
+                    <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+                    <span class="skill-pct">88%</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706);">
+                    <i class="fa-brands fa-linux"></i>
+                </div>
+                <h4>Linux Server</h4>
+                <p>Ubuntu, Debian, SSH, Nginx, Apache, UFW</p>
+                <div class="skill-bar-wrap">
+                    <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                    <span class="skill-pct">85%</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon" style="background:linear-gradient(135deg,#f97316,#ea580c);">
+                    <i class="fa-brands fa-aws"></i>
+                </div>
+                <h4>AWS Cloud</h4>
+                <p>EC2, S3, VPC, IAM, Security Groups, Elastic IP</p>
+                <div class="skill-bar-wrap">
+                    <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                    <span class="skill-pct">80%</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon" style="background:linear-gradient(135deg,#22c55e,#15803d);">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h4>Zabbix</h4>
+                <p>Host monitoring, trigger, alert, dashboard, agent</p>
+                <div class="skill-bar-wrap">
+                    <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+                    <span class="skill-pct">78%</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9);">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h4>Nagios</h4>
+                <p>Service monitoring, alerting, plugin setup, NRPE</p>
+                <div class="skill-bar-wrap">
+                    <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+                    <span class="skill-pct">75%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools & Certifications -->
+        <div class="cert-section reveal">
+            <div class="page-header" style="text-align:left;padding:0 0 20px;">
+                <div class="page-tag" style="margin-bottom:10px;"><i class="fa-solid fa-wrench"></i> &nbsp;Tools & Tools</div>
+                <h1 style="font-size:1.8rem;">Tools yang <span>Sering Dipakai</span></h1>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon" style="background:linear-gradient(135deg,#1a6fd4,#0f4fa8);"><i class="fa-solid fa-terminal"></i></div>
+                    <div><h4>Winbox</h4><p>MikroTik GUI Management</p></div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706);"><i class="fa-brands fa-linux"></i></div>
+                    <div><h4>Linux CLI</h4><p>Bash, nano, vim, systemctl</p></div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon" style="background:linear-gradient(135deg,#f97316,#ea580c);"><i class="fa-brands fa-aws"></i></div>
+                    <div><h4>AWS Console</h4><p>Cloud management dashboard</p></div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon" style="background:linear-gradient(135deg,#22c55e,#15803d);"><i class="fa-solid fa-chart-bar"></i></div>
+                    <div><h4>Zabbix Dashboard</h4><p>Monitoring & alert system</p></div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon" style="background:linear-gradient(135deg,#5bb8e8,#1a6fd4);"><i class="fa-solid fa-network-wired"></i></div>
+                    <div><h4>Packet Tracer</h4><p>Network simulation tool</p></div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9);"><i class="fa-solid fa-eye"></i></div>
+                    <div><h4>Wireshark</h4><p>Network packet analyzer</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE NAV -->
+    <div class="page-nav">
+        <a href="about.html" class="page-nav-btn" data-page>
+            <i class="fa-solid fa-chevron-left"></i>
+            <div><span class="nav-label">Halaman Sebelumnya</span><span class="nav-title">Tentang Saya</span></div>
+        </a>
+        <div class="page-dots">
+            <a href="index.html" class="page-dot" data-page title="Home"></a>
+            <a href="about.html" class="page-dot" data-page title="Tentang"></a>
+            <a href="skills.html" class="page-dot active" title="Skills"></a>
+            <a href="projects.html" class="page-dot" data-page title="Projects"></a>
+            <a href="contact.html" class="page-dot" data-page title="Kontak"></a>
+        </div>
+        <a href="projects.html" class="page-nav-btn" data-page>
+            <div><span class="nav-label">Halaman Berikutnya</span><span class="nav-title">Projects</span></div>
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo"><span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span></div>
+            <p id="footerYear"></p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/boyzjiboyz77_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="mailto:muhamadrajibsyahputra@smkwikrama.sch.id"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<button class="back-to-top" id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
+<script src="app.js"></script>
+</body>
+</html>

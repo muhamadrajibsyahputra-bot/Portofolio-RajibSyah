@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajib | Sertifikat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<canvas id="starCanvas"></canvas>
+<div id="pageOverlay"></div>
+
+<nav class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-page>
+        <span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link" href="index.html" data-page><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a class="nav-link" href="about.html" data-page><i class="fa-solid fa-user"></i> Tentang</a></li>
+        <li><a class="nav-link" href="skills.html" data-page><i class="fa-solid fa-code"></i> Skills</a></li>
+        <li><a class="nav-link" href="projects.html" data-page><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+        <li><a class="nav-link active" href="certificates.html"><i class="fa-solid fa-certificate"></i> Sertifikat</a></li>
+        <li><a class="nav-link" href="contact.html" data-page><i class="fa-solid fa-envelope"></i> Kontak</a></li>
+    </ul>
+    <div class="navbar-right">
+        <button id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<div class="page-wrapper">
+    <div class="page-header reveal">
+        <div class="page-tag"><i class="fa-solid fa-certificate"></i> &nbsp;Sertifikat</div>
+        <h1>Pencapaian & <span>Sertifikasi</span></h1>
+        <p>Klik salah satu sertifikat untuk melihat detailnya</p>
+    </div>
+
+    <div class="section-content">
+
+        <!-- STATS -->
+        <div class="cert-stats reveal">
+            <div class="cert-stat-item">
+                <i class="fa-solid fa-certificate"></i>
+                <span class="cert-stat-num">4</span>
+                <span class="cert-stat-label">Sertifikat</span>
+            </div>
+            <div class="cert-stat-div"></div>
+            <div class="cert-stat-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span class="cert-stat-num">2</span>
+                <span class="cert-stat-label">Cybersecurity</span>
+            </div>
+            <div class="cert-stat-div"></div>
+            <div class="cert-stat-item">
+                <i class="fa-brands fa-linux"></i>
+                <span class="cert-stat-num">1</span>
+                <span class="cert-stat-label">Linux</span>
+            </div>
+            <div class="cert-stat-div"></div>
+            <div class="cert-stat-item">
+                <i class="fa-solid fa-server"></i>
+                <span class="cert-stat-num">1</span>
+                <span class="cert-stat-label">Virtualisasi</span>
+            </div>
+        </div>
+
+        <!-- CERT CARDS — klik untuk masuk detail -->
+        <div class="cert-cards-grid reveal">
+
+            <a href="certificate-detail.html?id=cybersec" class="cert-full-card cert-clickable" data-page>
+                <div class="cert-card-top" style="background:linear-gradient(135deg,#ef4444,#b91c1c);">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div class="cert-badge-label">Security</div>
+                    <div class="cert-view-hint"><i class="fa-solid fa-eye"></i> Lihat</div>
+                </div>
+                <div class="cert-card-body">
+                    <div class="cert-issuer"><i class="fa-solid fa-building"></i> Cisco NetAcad</div>
+                    <h3>Cybersecurity Essentials</h3>
+                    <p>Dasar-dasar keamanan siber, ancaman, serangan, dan cara melindungi sistem jaringan.</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> 2024</span>
+                        <span><i class="fa-solid fa-tag"></i> Cybersecurity</span>
+                    </div>
+                    <div class="cert-enter-btn"><span>Lihat Sertifikat</span><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="certificate-detail.html?id=linux" class="cert-full-card cert-clickable" data-page>
+                <div class="cert-card-top" style="background:linear-gradient(135deg,#f59e0b,#d97706);">
+                    <i class="fa-brands fa-linux"></i>
+                    <div class="cert-badge-label">Linux</div>
+                    <div class="cert-view-hint"><i class="fa-solid fa-eye"></i> Lihat</div>
+                </div>
+                <div class="cert-card-body">
+                    <div class="cert-issuer"><i class="fa-brands fa-linux"></i> NDG / Cisco</div>
+                    <h3>Linux Fundamental</h3>
+                    <p>Fondasi sistem operasi Linux, command line, manajemen file, user, dan proses.</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> 2024</span>
+                        <span><i class="fa-solid fa-tag"></i> Linux</span>
+                    </div>
+                    <div class="cert-enter-btn"><span>Lihat Sertifikat</span><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="certificate-detail.html?id=introcybersec" class="cert-full-card cert-clickable" data-page>
+                <div class="cert-card-top" style="background:linear-gradient(135deg,#6366f1,#4f46e5);">
+                    <i class="fa-solid fa-lock"></i>
+                    <div class="cert-badge-label">Security</div>
+                    <div class="cert-view-hint"><i class="fa-solid fa-eye"></i> Lihat</div>
+                </div>
+                <div class="cert-card-body">
+                    <div class="cert-issuer"><i class="fa-solid fa-building"></i> Cisco NetAcad</div>
+                    <h3>Introduction to Cybersecurity</h3>
+                    <p>Pengenalan dunia keamanan siber, tren ancaman global, dan karir di bidang keamanan digital.</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> 2024</span>
+                        <span><i class="fa-solid fa-tag"></i> Cybersecurity</span>
+                    </div>
+                    <div class="cert-enter-btn"><span>Lihat Sertifikat</span><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="certificate-detail.html?id=vm" class="cert-full-card cert-clickable" data-page>
+                <div class="cert-card-top" style="background:linear-gradient(135deg,#22c55e,#15803d);">
+                    <i class="fa-solid fa-server"></i>
+                    <div class="cert-badge-label">Virtualisasi</div>
+                    <div class="cert-view-hint"><i class="fa-solid fa-eye"></i> Lihat</div>
+                </div>
+                <div class="cert-card-body">
+                    <div class="cert-issuer"><i class="fa-solid fa-building"></i> VMware / NetAcad</div>
+                    <h3>Virtual Machine Fundamental</h3>
+                    <p>Dasar-dasar virtualisasi, instalasi dan konfigurasi virtual machine menggunakan VirtualBox/VMware.</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> 2024</span>
+                        <span><i class="fa-solid fa-tag"></i> Virtualisasi</span>
+                    </div>
+                    <div class="cert-enter-btn"><span>Lihat Sertifikat</span><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="cert-note reveal">
+            <i class="fa-solid fa-circle-info"></i>
+            <p>Klik card sertifikat untuk melihat gambar lengkapnya. Untuk verifikasi, hubungi via <a href="contact.html" data-page>halaman kontak</a>.</p>
+        </div>
+
+    </div>
+
+    <div class="page-nav">
+        <a href="projects.html" class="page-nav-btn" data-page>
+            <i class="fa-solid fa-chevron-left"></i>
+            <div><span class="nav-label">Sebelumnya</span><span class="nav-title">Projects</span></div>
+        </a>
+        <div class="page-dots">
+            <a href="index.html" class="page-dot" data-page title="Home"></a>
+            <a href="about.html" class="page-dot" data-page title="Tentang"></a>
+            <a href="skills.html" class="page-dot" data-page title="Skills"></a>
+            <a href="projects.html" class="page-dot" data-page title="Projects"></a>
+            <a href="certificates.html" class="page-dot active" title="Sertifikat"></a>
+            <a href="contact.html" class="page-dot" data-page title="Kontak"></a>
+        </div>
+        <a href="contact.html" class="page-nav-btn" data-page>
+            <div><span class="nav-label">Berikutnya</span><span class="nav-title">Kontak</span></div>
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo"><span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span></div>
+            <p id="footerYear"></p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/boyzjiboyz77_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="mailto:muhamadrajibsyahputra@smkwikrama.sch.id"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<button class="back-to-top" id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
+<script src="app.js"></script>
+</body>
+</html>

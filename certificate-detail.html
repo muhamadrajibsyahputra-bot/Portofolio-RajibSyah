@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajib | Detail Sertifikat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<canvas id="starCanvas"></canvas>
+<div id="pageOverlay"></div>
+
+<nav class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-page>
+        <span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link" href="index.html" data-page><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a class="nav-link" href="about.html" data-page><i class="fa-solid fa-user"></i> Tentang</a></li>
+        <li><a class="nav-link" href="skills.html" data-page><i class="fa-solid fa-code"></i> Skills</a></li>
+        <li><a class="nav-link" href="projects.html" data-page><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+        <li><a class="nav-link active" href="certificates.html" data-page><i class="fa-solid fa-certificate"></i> Sertifikat</a></li>
+        <li><a class="nav-link" href="contact.html" data-page><i class="fa-solid fa-envelope"></i> Kontak</a></li>
+    </ul>
+    <div class="navbar-right">
+        <button id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<div class="page-wrapper">
+    <div class="section-content">
+
+        <!-- BACK BUTTON -->
+        <a href="certificates.html" class="cert-back-btn" data-page>
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Sertifikat
+        </a>
+
+        <!-- DETAIL CONTAINER (filled by JS) -->
+        <div class="cert-detail-wrap reveal" id="certDetailWrap">
+            <!-- Left: image -->
+            <div class="cert-detail-img-wrap">
+                <div class="cert-detail-img-bg" id="certImgBg"></div>
+                <img id="certImg" src="" alt="Sertifikat" class="cert-detail-img"
+                     onerror="this.src='https://placehold.co/800x560/1a1a1a/4ade80?text=Sertifikat'">
+                <a id="certDownloadBtn" href="#" target="_blank" class="cert-download-btn">
+                    <i class="fa-solid fa-download"></i> Download / Buka Full
+                </a>
+            </div>
+
+            <!-- Right: info -->
+            <div class="cert-detail-info">
+                <div class="cert-detail-badge" id="certBadge"></div>
+                <div class="cert-detail-issuer" id="certIssuer"></div>
+                <h1 class="cert-detail-title" id="certTitle"></h1>
+                <p class="cert-detail-desc" id="certDesc"></p>
+
+                <div class="cert-detail-meta" id="certMeta"></div>
+
+                <div class="cert-detail-skills" id="certSkills"></div>
+
+                <div class="cert-detail-actions">
+                    <a id="certViewBtn" href="#" target="_blank" class="btn btn-primary">
+                        <i class="fa-solid fa-external-link-alt"></i> Lihat Sertifikat Asli
+                    </a>
+                    <a href="certificates.html" class="btn btn-secondary" data-page>
+                        <i class="fa-solid fa-grid-2"></i> Semua Sertifikat
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- OTHER CERTS -->
+        <div class="cert-other reveal" id="certOther">
+            <h3 class="cert-other-title">Sertifikat Lainnya</h3>
+            <div class="cert-other-grid" id="certOtherGrid"></div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo"><span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span></div>
+            <p id="footerYear"></p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/boyzjiboyz77_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="mailto:muhamadrajibsyahputra@smkwikrama.sch.id"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<button class="back-to-top" id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
+<script src="app.js"></script>
+<script src="certificates-data.js"></script>
+</body>
+</html>

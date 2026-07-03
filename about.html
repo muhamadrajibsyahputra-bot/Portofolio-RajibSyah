@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajib | Tentang Saya</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<canvas id="starCanvas"></canvas>
+<div id="pageOverlay"></div>
+
+<nav class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-page>
+        <span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link" href="index.html" data-page><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a class="nav-link active" href="about.html"><i class="fa-solid fa-user"></i> Tentang</a></li>
+        <li><a class="nav-link" href="skills.html" data-page><i class="fa-solid fa-code"></i> Skills</a></li>
+        <li><a class="nav-link" href="projects.html" data-page><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+        <li><a class="nav-link" href="certificates.html" data-page><i class="fa-solid fa-certificate"></i> Sertifikat</a></li>
+        <li><a class="nav-link" href="contact.html" data-page><i class="fa-solid fa-envelope"></i> Kontak</a></li>
+    </ul>
+    <div class="navbar-right">
+        <button id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<div class="page-wrapper">
+    <div class="page-header reveal">
+        <div class="page-tag"><i class="fa-solid fa-user"></i> &nbsp;Tentang Saya</div>
+        <h1>Kenali Lebih <span>Dalam</span></h1>
+        <p>Latar belakang, pendidikan, dan perjalanan saya</p>
+    </div>
+
+    <div class="section-content">
+        <div class="about-grid reveal">
+            <div class="about-photo-wrap" id="photoTiltWrap">
+                <div class="about-photo-ring"></div>
+                <div class="photo-tilt-card" id="photoTiltCard">
+                    <img src="foto/foto.jpg" class="about-photo" alt="Foto Rajib"
+                         onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
+                    <div class="photo-shine" id="photoShine"></div>
+                    <div class="photo-glare"></div>
+                </div>
+                <p class="photo-hint"><i class="fa-solid fa-hand-pointer"></i> Gerakkan kursor</p>
+            </div>
+            <div class="about-info">
+                <h2>Muhammad Rajib <span>Syah Putra</span></h2>
+                <p class="tagline">🎓 Siswa SMK · TJKT Enthusiast · Network & Cloud</p>
+                <p>
+                    Saya adalah siswa SMK Wikrama Bogor jurusan Teknik Jaringan Komputer dan
+                    Telekomunikasi (TJKT). Saya memiliki ketertarikan mendalam pada dunia jaringan,
+                    administrasi server, cloud computing, serta monitoring infrastruktur IT.
+                </p>
+                <p>
+                    Dengan semangat belajar yang tinggi, saya terus mengembangkan diri melalui
+                    praktik langsung di laboratorium, mengikuti pelatihan, dan mengerjakan
+                    project-project nyata yang meningkatkan kemampuan teknis saya.
+                </p>
+                <div class="about-tags">
+                    <span class="about-tag">MikroTik</span>
+                    <span class="about-tag">VLAN</span>
+                    <span class="about-tag">Linux Server</span>
+                    <span class="about-tag">AWS Cloud</span>
+                    <span class="about-tag">Zabbix</span>
+                    <span class="about-tag">Nagios</span>
+                    <span class="about-tag">TCP/IP</span>
+                    <span class="about-tag">Routing</span>
+                </div>
+                <a href="skills.html" class="btn btn-primary" data-page>
+                    <i class="fa-solid fa-code"></i> Lihat Skills Saya
+                </a>
+            </div>
+        </div>
+
+        <!-- Info cards -->
+        <div class="about-cards reveal" style="margin-top:40px;">
+            <div class="about-card">
+                <div class="about-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Pendidikan</h3>
+                <p>SMK Wikrama Bogor<br>Teknik Jaringan Komputer &amp; Telekomunikasi<br>
+                <span class="about-highlight">Aktif · 2024</span></p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <h3>Lokasi</h3>
+                <p>Bogor, Jawa Barat<br>Indonesia 🇮🇩<br>
+                <span class="about-highlight">Available Remote</span></p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon"><i class="fa-solid fa-fire"></i></div>
+                <h3>Passion</h3>
+                <p>Networking · Cloud Computing<br>Server Administration<br>
+                <span class="about-highlight">Open to Collaborate</span></p>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid reveal stats-section">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-folder-open"></i></div>
+                <h2 class="counter" data-target="15">0</h2>
+                <p>Project Selesai</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <h2 class="counter" data-target="6">0</h2>
+                <p>Skill Dikuasai</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-server"></i></div>
+                <h2 class="counter" data-target="3">0</h2>
+                <p>Sistem Monitoring</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-fire"></i></div>
+                <h2 class="counter" data-target="100">0</h2>
+                <p>% Semangat</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE NAV -->
+    <div class="page-nav">
+        <a href="index.html" class="page-nav-btn" data-page>
+            <i class="fa-solid fa-chevron-left"></i>
+            <div><span class="nav-label">Halaman Sebelumnya</span><span class="nav-title">Home</span></div>
+        </a>
+        <div class="page-dots">
+            <a href="index.html" class="page-dot" data-page title="Home"></a>
+            <a href="about.html" class="page-dot active" title="Tentang"></a>
+            <a href="skills.html" class="page-dot" data-page title="Skills"></a>
+            <a href="projects.html" class="page-dot" data-page title="Projects"></a>
+            <a href="contact.html" class="page-dot" data-page title="Kontak"></a>
+        </div>
+        <a href="skills.html" class="page-nav-btn" data-page>
+            <div><span class="nav-label">Halaman Berikutnya</span><span class="nav-title">Skills</span></div>
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo"><span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span></div>
+            <p id="footerYear"></p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/boyzjiboyz77_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="mailto:muhamadrajibsyahputra@smkwikrama.sch.id"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<button class="back-to-top" id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
+<script src="app.js"></script>
+</body>
+</html>

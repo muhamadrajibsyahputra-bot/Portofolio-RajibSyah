@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajib | Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<canvas id="starCanvas"></canvas>
+<div id="pageOverlay"></div>
+
+<nav class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-page>
+        <span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link" href="index.html" data-page><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a class="nav-link" href="about.html" data-page><i class="fa-solid fa-user"></i> Tentang</a></li>
+        <li><a class="nav-link" href="skills.html" data-page><i class="fa-solid fa-code"></i> Skills</a></li>
+        <li><a class="nav-link active" href="projects.html"><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+        <li><a class="nav-link" href="certificates.html" data-page><i class="fa-solid fa-certificate"></i> Sertifikat</a></li>
+        <li><a class="nav-link" href="contact.html" data-page><i class="fa-solid fa-envelope"></i> Kontak</a></li>
+    </ul>
+    <div class="navbar-right">
+        <button id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<div class="page-wrapper">
+    <div class="page-header reveal">
+        <div class="page-tag"><i class="fa-solid fa-folder-open"></i> &nbsp;Projects</div>
+        <h1>Project yang Pernah <span>Dikerjakan</span></h1>
+        <p>Kumpulan project nyata di bidang jaringan, server, dan cloud</p>
+    </div>
+
+    <div class="section-content">
+        <div class="projects-filter reveal">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="network">Networking</button>
+            <button class="filter-btn" data-filter="cloud">Cloud</button>
+            <button class="filter-btn" data-filter="monitoring">Monitoring</button>
+            <button class="filter-btn" data-filter="server">Server</button>
+        </div>
+
+        <div class="projects-grid reveal">
+            <div class="project-card" data-cat="network">
+    <div class="project-header">
+        <div class="project-icon" style="background:linear-gradient(135deg,#ef4444,#b91c1c);">
+            <i class="fa-solid fa-network-wired"></i>
+        </div>
+
+        <div class="project-links">
+            <a href="https://drive.google.com/drive/folders/1UhNnIONF-SROGsM6S7cLC9_LUOoXM_--?usp=drive_link"
+               target="_blank"
+               title="Lihat dokumentasi di Google Drive">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        </div>
+    </div>
+
+    <h3>Linux Superlab</h3>
+
+    <p>
+        Linux Superlab adalah laboratorium virtual untuk praktik sistem operasi
+        Linux dan jaringan komputer.
+    </p>
+
+    <div class="project-tags">
+        <span class="tag">Linux</span>
+        <span class="tag">Networking</span>
+        <span class="tag">Virtual Lab</span>
+        <span class="tag">Server</span>
+    </div>
+
+    <a href="https://drive.google.com/drive/folders/1UhNnIONF-SROGsM6S7cLC9_LUOoXM_--?usp=drive_link"
+       target="_blank"
+       class="project-drive-btn">
+        <i class="fa-brands fa-google-drive"></i> Lihat Dokumentasi
+    </a>
+</div>
+
+            <div class="project-card" data-cat="cloud">
+                <div class="project-header">
+                    <div class="project-icon" style="background:linear-gradient(135deg,#f97316,#ea580c);"><i class="fa-brands fa-aws"></i></div>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/1NY3oLGmL78gJujLuJ2X99Dj9B-ZmpQY7?usp=drive_link" target="_blank" title="Lihat dokumentasi di Google Drive">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                <h3>AWS EC2 Deployment</h3>
+                <p>Deploy server Linux menggunakan AWS EC2, konfigurasi SSH key pair, security group, dan elastic IP address.</p>
+                <div class="project-tags">
+                    <span class="tag">AWS</span><span class="tag">EC2</span><span class="tag">Linux</span><span class="tag">SSH</span>
+                </div>
+                <a href="https://drive.google.com/drive/folders/1NY3oLGmL78gJujLuJ2X99Dj9B-ZmpQY7?usp=drive_link"
+                   target="_blank" class="project-drive-btn">
+                    <i class="fa-brands fa-google-drive"></i> Lihat Dokumentasi
+                </a>
+            </div>
+
+            <div class="project-card" data-cat="monitoring">
+    <div class="project-header">
+        <div class="project-icon" style="background:linear-gradient(135deg,#22c55e,#15803d);">
+            <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <div class="project-links">
+            <a href="https://drive.google.com/drive/folders/1n2MamLKlJ4hS3F7V4VMD_GRCauaGGI-y?usp=sharing"
+               target="_blank"
+               title="Lihat dokumentasi di Google Drive">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        </div>
+    </div>
+
+    <h3>Monitoring dengan Zabbix</h3>
+
+    <p>
+        Monitoring host, service dan resource server menggunakan Zabbix
+        dengan konfigurasi trigger dan alert otomatis via email.
+    </p>
+
+    <div class="project-tags">
+        <span class="tag">Zabbix</span>
+        <span class="tag">Monitoring</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Alert</span>
+    </div>
+
+    <a href="https://drive.google.com/drive/folders/1n2MamLKlJ4hS3F7V4VMD_GRCauaGGI-y?usp=sharing"
+       target="_blank"
+       class="project-drive-btn">
+        <i class="fa-brands fa-google-drive"></i> Lihat Dokumentasi
+    </a>
+</div>
+
+           <div class="project-card" data-cat="server">
+    <div class="project-header">
+        <div class="project-icon" style="background:linear-gradient(135deg,#1a6fd4,#0f4fa8);">
+            <i class="fa-solid fa-server"></i>
+        </div>
+        <div class="project-links">
+            <a href="https://drive.google.com/drive/folders/1RGIjuji5t7y7uNUBp22NY5u7T2I-FU5n?usp=drive_link"
+               target="_blank"
+               title="Lihat dokumentasi di Google Drive">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        </div>
+    </div>
+
+    <h3>Linux Web Server</h3>
+
+    <p>
+        Konfigurasi web server Nginx dan Apache di Ubuntu,
+        termasuk virtual host, SSL/TLS dengan Let's Encrypt,
+        dan firewall UFW.
+    </p>
+
+    <div class="project-tags">
+        <span class="tag">Nginx</span>
+        <span class="tag">Apache</span>
+        <span class="tag">Ubuntu</span>
+        <span class="tag">SSL</span>
+    </div>
+
+    <a href="https://drive.google.com/drive/folders/1RGIjuji5t7y7uNUBp22NY5u7T2I-FU5n?usp=drive_link"
+       target="_blank"
+       class="project-drive-btn">
+        <i class="fa-brands fa-google-drive"></i> Lihat Dokumentasi
+    </a>
+</div>
+
+           <div class="project-card" data-cat="monitoring">
+    <div class="project-header">
+        <div class="project-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9);">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div class="project-links">
+            <a href="https://drive.google.com/drive/folders/1gJSyNKVv0MV0gz5j6vJTziPmhIFK5ntr?usp=drive_link"
+               target="_blank"
+               title="Lihat dokumentasi di Google Drive">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        </div>
+    </div>
+
+    <h3>Cybersecurity</h3>
+
+    <p>
+        Cybersecurity adalah upaya melindungi sistem, jaringan, dan data
+        dari serangan atau akses yang tidak sah.
+    </p>
+
+    <div class="project-tags">
+        <span class="tag">Cybersecurity</span>
+        <span class="tag">Network Security</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Security</span>
+    </div>
+
+    <a href="https://drive.google.com/drive/folders/1gJSyNKVv0MV0gz5j6vJTziPmhIFK5ntr?usp=drive_link"
+       target="_blank"
+       class="project-drive-btn">
+        <i class="fa-brands fa-google-drive"></i> Lihat Dokumentasi
+    </a>
+</div>
+
+    <!-- PAGE NAV -->
+    <div class="page-nav">
+        <a href="skills.html" class="page-nav-btn" data-page>
+            <i class="fa-solid fa-chevron-left"></i>
+            <div><span class="nav-label">Halaman Sebelumnya</span><span class="nav-title">Skills</span></div>
+        </a>
+        <div class="page-dots">
+            <a href="index.html" class="page-dot" data-page title="Home"></a>
+            <a href="about.html" class="page-dot" data-page title="Tentang"></a>
+            <a href="skills.html" class="page-dot" data-page title="Skills"></a>
+            <a href="projects.html" class="page-dot active" title="Projects"></a>
+            <a href="contact.html" class="page-dot" data-page title="Kontak"></a>
+        </div>
+        <a href="contact.html" class="page-nav-btn" data-page>
+            <div><span class="nav-label">Halaman Berikutnya</span><span class="nav-title">Kontak</span></div>
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo"><span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span></div>
+            <p id="footerYear"></p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/boyzjiboyz77_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="mailto:muhamadrajibsyahputra@smkwikrama.sch.id"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<button class="back-to-top" id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
+<script src="app.js"></script>
+</body>
+</html>

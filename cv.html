@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajib | Curriculum Vitae</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .cv-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 2.2fr;
+            gap: 32px;
+            align-items: start;
+            margin-bottom: 40px;
+        }
+
+        /* ── Sidebar ── */
+        .cv-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: sticky;
+            top: 90px;
+        }
+
+        .cv-profile-card {
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 22px;
+            text-align: center;
+            backdrop-filter: blur(14px);
+        }
+
+        .cv-avatar {
+            width: 90px; height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+            border: 3px solid rgba(22,163,74,0.3);
+            margin: 0 auto 14px;
+            display: block;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .cv-name {
+            font-size: 1.05rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+            color: var(--light);
+        }
+
+        .cv-role {
+            font-size: 0.78rem;
+            color: var(--gray);
+            margin-bottom: 16px;
+        }
+
+        .cv-contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            text-align: left;
+        }
+
+        .cv-contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 0.76rem;
+            color: var(--gray);
+        }
+
+        .cv-contact-list li i {
+            width: 16px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .cv-contact-list a {
+            color: var(--gray);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .cv-contact-list a:hover { color: var(--primary); }
+
+        .cv-action-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cv-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 11px 16px;
+            border-radius: 12px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cv-btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 16px rgba(22,163,74,0.3);
+        }
+
+        .cv-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22,163,74,0.4); }
+
+        .cv-btn-secondary {
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            color: var(--gray);
+        }
+
+        .cv-btn-secondary:hover { border-color: rgba(22,163,74,0.4); color: var(--primary); transform: translateY(-2px); }
+
+        /* ── Main CV content ── */
+        .cv-main {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* PDF Embed */
+        .cv-pdf-section {
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            backdrop-filter: blur(14px);
+        }
+
+        .cv-pdf-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cv-pdf-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--light);
+        }
+
+        .cv-pdf-title i { color: var(--primary); }
+
+        .cv-pdf-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .cv-pdf-actions a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.74rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .cv-pdf-actions .btn-open {
+            background: rgba(22,163,74,0.1);
+            border: 1px solid rgba(22,163,74,0.25);
+            color: var(--primary);
+        }
+
+        .cv-pdf-actions .btn-open:hover { background: rgba(22,163,74,0.2); }
+
+        .cv-pdf-embed {
+            width: 100%;
+            height: 680px;
+            border: none;
+            display: block;
+            background: #f5f5f5;
+        }
+
+        .cv-pdf-fallback {
+            display: none;
+            padding: 48px 24px;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .cv-pdf-fallback i { font-size: 3rem; color: var(--gray-2); }
+        .cv-pdf-fallback p { color: var(--gray); font-size: 0.88rem; }
+
+        /* CV sections */
+        .cv-section {
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            backdrop-filter: blur(14px);
+        }
+
+        .cv-section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: var(--light);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cv-section-title i { color: var(--primary); font-size: 0.9rem; }
+
+        .cv-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .cv-timeline-item {
+            display: flex;
+            gap: 14px;
+        }
+
+        .cv-timeline-dot {
+            width: 10px; height: 10px;
+            background: var(--primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 5px;
+            box-shadow: 0 0 8px rgba(22,163,74,0.4);
+        }
+
+        .cv-timeline-body h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 2px; }
+        .cv-timeline-body .cv-org { font-size: 0.78rem; color: var(--primary); font-weight: 600; }
+        .cv-timeline-body .cv-year { font-size: 0.72rem; color: var(--gray-2); }
+        .cv-timeline-body p { font-size: 0.78rem; color: var(--gray); line-height: 1.6; margin-top: 4px; }
+
+        .cv-skill-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .cv-skill-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .cv-skill-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cv-skill-row span:first-child { font-size: 0.78rem; font-weight: 600; }
+        .cv-skill-row span:last-child { font-size: 0.7rem; color: var(--gray-2); }
+
+        .cv-sbar {
+            height: 5px;
+            background: rgba(22,163,74,0.1);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .cv-sbar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), #4ade80);
+            border-radius: 50px;
+            width: 0;
+            transition: width 1.5s ease;
+        }
+
+        .cv-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+        .cv-tag {
+            background: rgba(22,163,74,0.08);
+            border: 1px solid rgba(22,163,74,0.18);
+            color: var(--primary);
+            padding: 4px 11px;
+            border-radius: 7px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .cv-wrapper { grid-template-columns: 1fr; }
+            .cv-sidebar { position: static; }
+            .cv-pdf-embed { height: 450px; }
+            .cv-skill-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<canvas id="starCanvas"></canvas>
+<div id="pageOverlay"></div>
+
+<nav class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-page>
+        <span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link" href="index.html" data-page><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a class="nav-link" href="about.html" data-page><i class="fa-solid fa-user"></i> Tentang</a></li>
+        <li><a class="nav-link" href="skills.html" data-page><i class="fa-solid fa-code"></i> Skills</a></li>
+        <li><a class="nav-link" href="projects.html" data-page><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+        <li><a class="nav-link" href="certificates.html" data-page><i class="fa-solid fa-certificate"></i> Sertifikat</a></li>
+        <li><a class="nav-link active" href="cv.html"><i class="fa-solid fa-file-lines"></i> CV</a></li>
+        <li><a class="nav-link" href="contact.html" data-page><i class="fa-solid fa-envelope"></i> Kontak</a></li>
+    </ul>
+    <div class="navbar-right">
+        <button id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<div class="page-wrapper">
+    <div class="page-header reveal">
+        <div class="page-tag"><i class="fa-solid fa-file-lines"></i> &nbsp;Curriculum Vitae</div>
+        <h1>Resume <span>Saya</span></h1>
+        <p>Profil lengkap, pendidikan, keahlian, dan pengalaman</p>
+    </div>
+
+    <div class="section-content">
+        <div class="cv-wrapper reveal">
+
+            <!-- ── SIDEBAR ── -->
+            <div class="cv-sidebar">
+                <div class="cv-profile-card">
+                    <img src="foto/foto.jpg" class="cv-avatar" alt="Rajib"
+                         onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
+                    <div class="cv-name">Muhammad Rajib Syah Putra</div>
+                    <div class="cv-role">Network & Cloud Enthusiast · TJKT</div>
+                    <ul class="cv-contact-list">
+                        <li><i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:muhamadrajibsyahputra@smkwikrama.sch.id">smkwikrama email</a>
+                        </li>
+                        <li><i class="fa-solid fa-phone"></i>
+                            <a href="tel:081617681430">081617681430</a>
+                        </li>
+                        <li><i class="fa-brands fa-instagram"></i>
+                            <a href="https://www.instagram.com/boyzjiboyz77_/" target="_blank">@boyzjiboyz77_</a>
+                        </li>
+        <li><i class="fa-brands fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/muhammad-rajib-syah-putra-096125414/" target="_blank">LinkedIn</a>
+                        </li>
+                        <li><i class="fa-solid fa-location-dot"></i>
+                            <span>Bogor, Jawa Barat</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cv-action-btns">
+                    <a href="https://drive.google.com/uc?export=download&id=1Xjm8Uk_de13yS_dwBT4vdyXnC1mIk-fl"
+                       class="cv-btn cv-btn-primary">
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
+                    <a href="https://drive.google.com/file/d/1Xjm8Uk_de13yS_dwBT4vdyXnC1mIk-fl/view"
+                       target="_blank" class="cv-btn cv-btn-secondary">
+                        <i class="fa-brands fa-google-drive"></i> Buka di Drive
+                    </a>
+                    <a href="contact.html" class="cv-btn cv-btn-secondary" data-page>
+                        <i class="fa-solid fa-paper-plane"></i> Hubungi Saya
+                    </a>
+                </div>
+            </div>
+
+            <!-- ── MAIN ── -->
+            <div class="cv-main">
+
+                <!-- PDF Embed -->
+                <div class="cv-pdf-section">
+                    <div class="cv-pdf-header">
+                        <div class="cv-pdf-title">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            CV Muhammad Rajib Syah Putra.pdf
+                        </div>
+                        <div class="cv-pdf-actions">
+                            <a href="https://drive.google.com/file/d/1Xjm8Uk_de13yS_dwBT4vdyXnC1mIk-fl/view"
+                               target="_blank" class="btn-open">
+                                <i class="fa-solid fa-external-link-alt"></i> Buka Full
+                            </a>
+                        </div>
+                    </div>
+                    <iframe
+                        class="cv-pdf-embed"
+                        src="https://drive.google.com/file/d/1Xjm8Uk_de13yS_dwBT4vdyXnC1mIk-fl/preview"
+                        allow="autoplay"
+                        title="CV Rajib">
+                    </iframe>
+                </div>
+
+                <!-- Pendidikan -->
+                <div class="cv-section">
+                    <div class="cv-section-title">
+                        <i class="fa-solid fa-graduation-cap"></i> Pendidikan
+                    </div>
+                    <div class="cv-timeline">
+                        <div class="cv-timeline-item">
+                            <div class="cv-timeline-dot"></div>
+                            <div class="cv-timeline-body">
+                                <h4>SMK Wikrama Bogor</h4>
+                                <div class="cv-org">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</div>
+                                <div class="cv-year">2022 – Sekarang</div>
+                                <p>Mempelajari jaringan komputer, administrasi server, cloud computing, dan monitoring infrastruktur IT.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="cv-section">
+                    <div class="cv-section-title">
+                        <i class="fa-solid fa-code"></i> Keahlian Teknis
+                    </div>
+                    <div class="cv-skill-grid" id="cvSkillGrid">
+                        <div class="cv-skill-item">
+                            <div class="cv-skill-row"><span>Networking</span><span>90%</span></div>
+                            <div class="cv-sbar"><div class="cv-sbar-fill" data-w="90"></div></div>
+                        </div>
+                        <div class="cv-skill-item">
+                            <div class="cv-skill-row"><span>MikroTik</span><span>88%</span></div>
+                            <div class="cv-sbar"><div class="cv-sbar-fill" data-w="88"></div></div>
+                        </div>
+                        <div class="cv-skill-item">
+                            <div class="cv-skill-row"><span>Linux Server</span><span>85%</span></div>
+                            <div class="cv-sbar"><div class="cv-sbar-fill" data-w="85"></div></div>
+                        </div>
+                        <div class="cv-skill-item">
+                            <div class="cv-skill-row"><span>AWS Cloud</span><span>80%</span></div>
+                            <div class="cv-sbar"><div class="cv-sbar-fill" data-w="80"></div></div>
+                        </div>
+                        <div class="cv-skill-item">
+                            <div class="cv-skill-row"><span>Zabbix</span><span>78%</span></div>
+                            <div class="cv-sbar"><div class="cv-sbar-fill" data-w="78"></div></div>
+                        </div>
+                        <div class="cv-skill-item">
+                            <div class="cv-skill-row"><span>Nagios</span><span>75%</span></div>
+                            <div class="cv-sbar"><div class="cv-sbar-fill" data-w="75"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="cv-section">
+                    <div class="cv-section-title">
+                        <i class="fa-solid fa-wrench"></i> Tools & Teknologi
+                    </div>
+                    <div class="cv-tags">
+                        <span class="cv-tag">Winbox</span>
+                        <span class="cv-tag">RouterOS</span>
+                        <span class="cv-tag">Linux CLI</span>
+                        <span class="cv-tag">AWS Console</span>
+                        <span class="cv-tag">Nginx</span>
+                        <span class="cv-tag">Apache</span>
+                        <span class="cv-tag">SSH</span>
+                        <span class="cv-tag">Zabbix</span>
+                        <span class="cv-tag">Nagios</span>
+                        <span class="cv-tag">Packet Tracer</span>
+                        <span class="cv-tag">Wireshark</span>
+                        <span class="cv-tag">UFW</span>
+                        <span class="cv-tag">VirtualBox</span>
+                    </div>
+                </div>
+
+                <!-- Pengalaman / Project -->
+                <div class="cv-section">
+                    <div class="cv-section-title">
+                        <i class="fa-solid fa-folder-open"></i> Pengalaman & Project
+                    </div>
+                    <div class="cv-timeline">
+                        <div class="cv-timeline-item">
+                            <div class="cv-timeline-dot"></div>
+                            <div class="cv-timeline-body">
+                                <h4>AWS EC2 Deployment</h4>
+                                <div class="cv-org">Cloud Project · AWS</div>
+                                <div class="cv-year">2024</div>
+                                <p>Deploy server Linux di AWS EC2 dengan konfigurasi SSH, security group, dan elastic IP.</p>
+                            </div>
+                        </div>
+                        <div class="cv-timeline-item">
+                            <div class="cv-timeline-dot"></div>
+                            <div class="cv-timeline-body">
+                                <h4>VLAN & Routing MikroTik</h4>
+                                <div class="cv-org">Networking Project · MikroTik</div>
+                                <div class="cv-year">2024</div>
+                                <p>Implementasi VLAN, DHCP Server, dan Static Routing di lab jaringan sekolah.</p>
+                            </div>
+                        </div>
+                        <div class="cv-timeline-item">
+                            <div class="cv-timeline-dot"></div>
+                            <div class="cv-timeline-body">
+                                <h4>Monitoring dengan Zabbix</h4>
+                                <div class="cv-org">Monitoring Project · Zabbix</div>
+                                <div class="cv-year">2024</div>
+                                <p>Setup Zabbix untuk monitoring host, service, dan alert otomatis via email.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="page-nav">
+        <a href="certificates.html" class="page-nav-btn" data-page>
+            <i class="fa-solid fa-chevron-left"></i>
+            <div><span class="nav-label">Sebelumnya</span><span class="nav-title">Sertifikat</span></div>
+        </a>
+        <div class="page-dots">
+            <a href="index.html" class="page-dot" data-page title="Home"></a>
+            <a href="about.html" class="page-dot" data-page title="Tentang"></a>
+            <a href="skills.html" class="page-dot" data-page title="Skills"></a>
+            <a href="projects.html" class="page-dot" data-page title="Projects"></a>
+            <a href="certificates.html" class="page-dot" data-page title="Sertifikat"></a>
+            <a href="cv.html" class="page-dot active" title="CV"></a>
+            <a href="contact.html" class="page-dot" data-page title="Kontak"></a>
+        </div>
+        <a href="contact.html" class="page-nav-btn" data-page>
+            <div><span class="nav-label">Berikutnya</span><span class="nav-title">Kontak</span></div>
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo"><span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span></div>
+            <p id="footerYear"></p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/boyzjiboyz77_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="mailto:muhamadrajibsyahputra@smkwikrama.sch.id"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<button class="back-to-top" id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
+<script src="app.js"></script>
+<script>
+// Animate CV skill bars on scroll
+(function() {
+    let animated = false;
+    function animateBars() {
+        if (animated) return;
+        const grid = document.getElementById('cvSkillGrid');
+        if (!grid) return;
+        const top = grid.getBoundingClientRect().top;
+        if (top < window.innerHeight - 60) {
+            animated = true;
+            document.querySelectorAll('.cv-sbar-fill').forEach(function(bar) {
+                bar.style.width = bar.getAttribute('data-w') + '%';
+            });
+        }
+    }
+    window.addEventListener('scroll', animateBars);
+    setTimeout(animateBars, 400);
+})();
+</script>
+</body>
+</html>

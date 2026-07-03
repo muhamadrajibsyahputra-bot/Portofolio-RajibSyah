@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajib | Kontak</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<canvas id="starCanvas"></canvas>
+<div id="pageOverlay"></div>
+
+<nav class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-page>
+        <span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link" href="index.html" data-page><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a class="nav-link" href="about.html" data-page><i class="fa-solid fa-user"></i> Tentang</a></li>
+        <li><a class="nav-link" href="skills.html" data-page><i class="fa-solid fa-code"></i> Skills</a></li>
+        <li><a class="nav-link" href="projects.html" data-page><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+        <li><a class="nav-link" href="certificates.html" data-page><i class="fa-solid fa-certificate"></i> Sertifikat</a></li>
+        <li><a class="nav-link active" href="contact.html"><i class="fa-solid fa-envelope"></i> Kontak</a></li>
+    </ul>
+    <div class="navbar-right">
+        <button id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<div class="page-wrapper">
+    <div class="page-header reveal">
+        <div class="page-tag"><i class="fa-solid fa-envelope"></i> &nbsp;Kontak</div>
+        <h1>Mari <span>Terhubung</span></h1>
+        <p>Hubungi saya untuk kolaborasi, diskusi, atau sekadar menyapa</p>
+    </div>
+
+    <div class="section-content">
+        <div class="contact-wrapper reveal">
+            <div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:muhamadrajibsyahputra@smkwikrama.sch.id">muhamadrajibsyahputra@smkwikrama.sch.id</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <span class="contact-label">Telepon / WhatsApp</span>
+                            <a href="tel:081617681430">081617681430</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-brands fa-instagram"></i></div>
+                        <div>
+                            <span class="contact-label">Instagram</span>
+                            <a href="https://www.instagram.com/boyzjiboyz77_/" target="_blank">@boyzjiboyz77_</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
+                        <div>
+                            <span class="contact-label">LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/muhammad-rajib-syah-putra-096125414/" target="_blank">Muhammad Rajib Syah Putra</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <span class="contact-label">Lokasi</span>
+                            <span>Bogor, Jawa Barat, Indonesia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links" style="margin-top:20px;">
+                    <a href="https://www.instagram.com/boyzjiboyz77_/" target="_blank" class="social-link">
+                        <i class="fa-brands fa-instagram"></i><span>Instagram</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/muhammad-rajib-syah-putra-096125414/" target="_blank" class="social-link">
+                        <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:muhamadrajibsyahputra@smkwikrama.sch.id" class="social-link">
+                        <i class="fa-solid fa-envelope"></i><span>Email</span>
+                    </a>
+                    <a href="tel:081617681430" class="social-link">
+                        <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm"
+                  action="https://formsubmit.co/muhamadrajibsyahputra@smkwikrama.sch.id"
+                  method="POST">
+
+                <!-- FormSubmit config -->
+                <input type="hidden" name="_subject" value="Pesan Baru dari Portfolio Rajib!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://rajib.github.io/thanks.html">
+
+                <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:4px;">Kirim Pesan</h3>
+                <p style="color:var(--gray);font-size:0.82rem;margin-bottom:8px;">Isi form di bawah dan saya akan membalas secepatnya</p>
+                <div class="form-group">
+                    <label for="nameInput">Nama</label>
+                    <input type="text" id="nameInput" name="Nama" placeholder="Nama kamu" autocomplete="off" required/>
+                </div>
+                <div class="form-group">
+                    <label for="emailInput">Email</label>
+                    <input type="email" id="emailInput" name="Email" placeholder="email@kamu.com" autocomplete="off" required/>
+                </div>
+                <div class="form-group">
+                    <label for="subjectInput">Subjek</label>
+                    <input type="text" id="subjectInput" name="Subjek" placeholder="Subjek pesan" autocomplete="off"/>
+                </div>
+                <div class="form-group">
+                    <label for="msgInput">Pesan</label>
+                    <textarea id="msgInput" name="Pesan" rows="4" placeholder="Tulis pesanmu di sini..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fa-solid fa-paper-plane"></i> Kirim Pesan
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PAGE NAV -->
+    <div class="page-nav">
+        <a href="projects.html" class="page-nav-btn" data-page>
+            <i class="fa-solid fa-chevron-left"></i>
+            <div><span class="nav-label">Halaman Sebelumnya</span><span class="nav-title">Projects</span></div>
+        </a>
+        <div class="page-dots">
+            <a href="index.html" class="page-dot" data-page title="Home"></a>
+            <a href="about.html" class="page-dot" data-page title="Tentang"></a>
+            <a href="skills.html" class="page-dot" data-page title="Skills"></a>
+            <a href="projects.html" class="page-dot" data-page title="Projects"></a>
+            <a href="contact.html" class="page-dot active" title="Kontak"></a>
+        </div>
+        <a href="index.html" class="page-nav-btn" data-page>
+            <div><span class="nav-label">Kembali ke</span><span class="nav-title">Home</span></div>
+            <i class="fa-solid fa-house"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo"><span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span></div>
+            <p id="footerYear"></p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/boyzjiboyz77_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="mailto:muhamadrajibsyahputra@smkwikrama.sch.id"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<button class="back-to-top" id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajib · Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+    <style>body{background:#0a0a0a;}</style>
+</head>
+<body>
+<canvas id="starCanvas"></canvas>
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <a class="logo" href="#hero">
+        <span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link active" href="#hero"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a class="nav-link" href="#about"><i class="fa-solid fa-user"></i> Tentang</a></li>
+        <li><a class="nav-link" href="#skills"><i class="fa-solid fa-code"></i> Skills</a></li>
+        <li><a class="nav-link" href="#projects"><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+        <li><a class="nav-link" href="#certificates"><i class="fa-solid fa-certificate"></i> Sertifikat</a></li>
+        <li><a class="nav-link" href="cv.html"><i class="fa-solid fa-file-lines"></i> CV</a></li>
+        <li><a class="nav-link" href="#contact"><i class="fa-solid fa-envelope"></i> Kontak</a></li>
+    </ul>
+    <div class="navbar-right">
+        <button id="themeToggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section id="hero" class="hero">
+    <div class="hero-bg">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-content">
+        <div class="hero-status"><span class="status-dot"></span><span>Available for collaboration</span></div>
+        <h1 class="hero-title">
+            <span class="title-line">Halo, Saya</span>
+            <span class="title-name gradient-text">Muhammad Rajib</span>
+            <span class="title-line">Syah Putra</span>
+        </h1>
+        <div class="typing-wrapper">
+            <span class="typing-prefix">Fokus pada &nbsp;</span>
+            <span id="typingText" class="typing-text"></span>
+            <span class="cursor">|</span>
+        </div>
+        <p class="hero-desc">Siswa SMK Wikrama Bogor jurusan TJKT yang passionate di bidang Networking, MikroTik, Linux Server, AWS Cloud, dan Monitoring System.</p>
+        <div class="hero-actions">
+            <a href="#contact" class="btn-glow"><span class="btn-glow-inner"><i class="fa-solid fa-paper-plane"></i> Hubungi Saya</span></a>
+            <a href="#projects" class="btn-ghost"><i class="fa-solid fa-eye"></i> Lihat Project</a>
+            <a href="cv.html" class="btn-icon" title="CV"><i class="fa-solid fa-file-lines"></i></a>
+        </div>
+        <div class="hero-socials">
+            <a href="https://www.instagram.com/boyzjiboyz77_/" target="_blank" class="social-pill"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+            <a href="https://www.linkedin.com/in/muhammad-rajib-syah-putra-096125414/" target="_blank" class="social-pill"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+            <a href="mailto:muhamadrajibsyahputra@smkwikrama.sch.id" class="social-pill"><i class="fa-solid fa-envelope"></i><span>Email</span></a>
+            <a href="tel:081617681430" class="social-pill"><i class="fa-solid fa-phone"></i><span>WhatsApp</span></a>
+        </div>
+        <div class="hero-stats">
+            <div class="hstat"><span class="hstat-num">15+</span><span class="hstat-label">Projects</span></div>
+            <div class="hstat-div"></div>
+            <div class="hstat"><span class="hstat-num">6+</span><span class="hstat-label">Skills</span></div>
+            <div class="hstat-div"></div>
+            <div class="hstat"><span class="hstat-num">4</span><span class="hstat-label">Sertifikat</span></div>
+        </div>
+    </div>
+    <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"><div class="scroll-dot"></div></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ TENTANG ═══════════════════ -->
+<section id="about" class="sp-section reveal">
+    <div class="sp-header">
+        <div class="page-tag"><i class="fa-solid fa-user"></i> &nbsp;Tentang Saya</div>
+        <h2 class="sp-title">Kenali Lebih <span>Dalam</span></h2>
+        <p class="sp-sub">Latar belakang, pendidikan, dan perjalanan saya</p>
+    </div>
+    <div class="section-content">
+        <div class="about-grid reveal">
+            <div class="about-photo-wrap" id="photoTiltWrap">
+                <div class="about-photo-ring"></div>
+                <div class="photo-tilt-card" id="photoTiltCard">
+                    <img src="foto/foto.jpg" class="about-photo" alt="Foto Rajib"
+                         onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
+                    <div class="photo-shine" id="photoShine"></div>
+                    <div class="photo-glare"></div>
+                </div>
+                <p class="photo-hint"><i class="fa-solid fa-hand-pointer"></i> Gerakkan kursor</p>
+            </div>
+            <div class="about-info">
+                <h2>Muhammad Rajib <span>Syah Putra</span></h2>
+                <p class="tagline">🎓 Siswa SMK · TJKT Enthusiast · Network & Cloud</p>
+                <p>Saya adalah siswa SMK Wikrama Bogor jurusan TJKT dengan ketertarikan pada jaringan, administrasi server, cloud computing, serta monitoring infrastruktur IT.</p>
+                <p>Dengan semangat belajar tinggi, saya terus mengembangkan diri melalui praktik langsung di laboratorium dan project-project nyata.</p>
+                <div class="about-tags">
+                    <span class="about-tag">MikroTik</span><span class="about-tag">VLAN</span>
+                    <span class="about-tag">Linux Server</span><span class="about-tag">AWS Cloud</span>
+                    <span class="about-tag">Zabbix</span><span class="about-tag">Nagios</span>
+                    <span class="about-tag">TCP/IP</span><span class="about-tag">Routing</span>
+                </div>
+                <a href="#skills" class="btn btn-primary"><i class="fa-solid fa-code"></i> Lihat Skills Saya</a>
+            </div>
+        </div>
+        <div class="about-cards reveal" style="margin-top:40px;">
+            <div class="about-card">
+                <div class="about-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Pendidikan</h3>
+                <p>SMK Wikrama Bogor<br>TJKT<br><span class="about-highlight">Aktif · 2024</span></p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <h3>Lokasi</h3>
+                <p>Bogor, Jawa Barat<br>Indonesia 🇮🇩<br><span class="about-highlight">Available Remote</span></p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon"><i class="fa-solid fa-fire"></i></div>
+                <h3>Passion</h3>
+                <p>Networking · Cloud<br>Server Administration<br><span class="about-highlight">Open to Collaborate</span></p>
+            </div>
+        </div>
+        <div class="stats-grid reveal stats-section" style="margin-top:32px;">
+            <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-folder-open"></i></div><h2 class="counter" data-target="15">0</h2><p>Project Selesai</p></div>
+            <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div><h2 class="counter" data-target="6">0</h2><p>Skill Dikuasai</p></div>
+            <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-server"></i></div><h2 class="counter" data-target="3">0</h2><p>Sistem Monitoring</p></div>
+            <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-fire"></i></div><h2 class="counter" data-target="100">0</h2><p>% Semangat</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SKILLS ═══════════════════ -->
+<section id="skills" class="sp-section reveal">
+    <div class="sp-header">
+        <div class="page-tag"><i class="fa-solid fa-code"></i> &nbsp;Skills</div>
+        <h2 class="sp-title">Keahlian <span>Teknis</span></h2>
+        <p class="sp-sub">Teknologi yang saya kuasai di bidang jaringan, server, dan cloud</p>
+    </div>
+    <div class="section-content">
+        <div class="skills-grid reveal">
+            <div class="skill-card"><div class="skill-card-icon" style="background:linear-gradient(135deg,#1a6fd4,#0f4fa8);"><i class="fa-solid fa-network-wired"></i></div><h4>Networking</h4><p>VLAN, Routing, Switching, TCP/IP, OSI Model</p><div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div><span class="skill-pct">90%</span></div></div>
+            <div class="skill-card"><div class="skill-card-icon" style="background:linear-gradient(135deg,#ef4444,#b91c1c);"><i class="fa-solid fa-router"></i></div><h4>MikroTik</h4><p>RouterOS, Winbox, Firewall, Hotspot</p><div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div><span class="skill-pct">88%</span></div></div>
+            <div class="skill-card"><div class="skill-card-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706);"><i class="fa-brands fa-linux"></i></div><h4>Linux Server</h4><p>Ubuntu, Debian, SSH, Nginx, Apache, UFW</p><div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div><span class="skill-pct">85%</span></div></div>
+            <div class="skill-card"><div class="skill-card-icon" style="background:linear-gradient(135deg,#f97316,#ea580c);"><i class="fa-brands fa-aws"></i></div><h4>AWS Cloud</h4><p>EC2, S3, VPC, IAM, Security Groups</p><div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div><span class="skill-pct">80%</span></div></div>
+            <div class="skill-card"><div class="skill-card-icon" style="background:linear-gradient(135deg,#22c55e,#15803d);"><i class="fa-solid fa-chart-line"></i></div><h4>Zabbix</h4><p>Host monitoring, trigger, alert, dashboard</p><div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" data-width="78"></div></div><span class="skill-pct">78%</span></div></div>
+            <div class="skill-card"><div class="skill-card-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9);"><i class="fa-solid fa-shield-halved"></i></div><h4>Nagios</h4><p>Service monitoring, alerting, plugin setup</p><div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div><span class="skill-pct">75%</span></div></div>
+        </div>
+        <div class="cert-section reveal" style="margin-top:40px;">
+            <div class="page-tag" style="margin-bottom:12px;display:inline-flex;"><i class="fa-solid fa-wrench"></i> &nbsp;Tools</div>
+            <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:20px;">Tools yang <span style="color:var(--primary)">Sering Dipakai</span></h3>
+            <div class="cert-grid">
+                <div class="cert-card"><div class="cert-icon" style="background:linear-gradient(135deg,#1a6fd4,#0f4fa8);"><i class="fa-solid fa-terminal"></i></div><div><h4>Winbox</h4><p>MikroTik GUI Management</p></div></div>
+                <div class="cert-card"><div class="cert-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706);"><i class="fa-brands fa-linux"></i></div><div><h4>Linux CLI</h4><p>Bash, nano, vim, systemctl</p></div></div>
+                <div class="cert-card"><div class="cert-icon" style="background:linear-gradient(135deg,#f97316,#ea580c);"><i class="fa-brands fa-aws"></i></div><div><h4>AWS Console</h4><p>Cloud management dashboard</p></div></div>
+                <div class="cert-card"><div class="cert-icon" style="background:linear-gradient(135deg,#22c55e,#15803d);"><i class="fa-solid fa-chart-bar"></i></div><div><h4>Zabbix</h4><p>Monitoring & alert system</p></div></div>
+                <div class="cert-card"><div class="cert-icon" style="background:linear-gradient(135deg,#5bb8e8,#1a6fd4);"><i class="fa-solid fa-network-wired"></i></div><div><h4>Packet Tracer</h4><p>Network simulation tool</p></div></div>
+                <div class="cert-card"><div class="cert-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9);"><i class="fa-solid fa-eye"></i></div><div><h4>Wireshark</h4><p>Network packet analyzer</p></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ PROJECTS ═══════════════════ -->
+<section id="projects" class="sp-section reveal">
+    <div class="sp-header">
+        <div class="page-tag"><i class="fa-solid fa-folder-open"></i> &nbsp;Projects</div>
+        <h2 class="sp-title">Project yang Pernah <span>Dikerjakan</span></h2>
+        <p class="sp-sub">Kumpulan project nyata di bidang jaringan, server, dan cloud</p>
+    </div>
+    <div class="section-content">
+        <div class="projects-filter reveal">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="network">Networking</button>
+            <button class="filter-btn" data-filter="cloud">Cloud</button>
+            <button class="filter-btn" data-filter="monitoring">Monitoring</button>
+            <button class="filter-btn" data-filter="server">Server</button>
+        </div>
+        <div class="projects-grid reveal">
+            <div class="project-card" data-cat="network">
+                <div class="project-header"><div class="project-icon" style="background:linear-gradient(135deg,#ef4444,#b91c1c);"><i class="fa-solid fa-network-wired"></i></div><div class="project-links"><a href="https://drive.google.com/drive/folders/1UhNnIONF-SROGsM6S7cLC9_LUOoXM_--?usp=drive_link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+                <h3>Linux Superlab</h3><p>Laboratorium virtual untuk praktik sistem operasi Linux dan jaringan komputer.</p>
+                <div class="project-tags"><span class="tag">Linux</span><span class="tag">Networking</span><span class="tag">Virtual Lab</span></div>
+                <a href="https://drive.google.com/drive/folders/1UhNnIONF-SROGsM6S7cLC9_LUOoXM_--?usp=drive_link" target="_blank" class="project-drive-btn"><i class="fa-brands fa-google-drive"></i> Lihat Dokumentasi</a>
+            </div>
+            <div class="project-card" data-cat="cloud">
+                <div class="project-header"><div class="project-icon" style="background:linear-gradient(135deg,#f97316,#ea580c);"><i class="fa-brands fa-aws"></i></div><div class="project-links"><a href="https://drive.google.com/drive/folders/1NY3oLGmL78gJujLuJ2X99Dj9B-ZmpQY7?usp=drive_link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+                <h3>AWS EC2 Deployment</h3><p>Deploy server Linux menggunakan AWS EC2, konfigurasi SSH key pair, security group, dan elastic IP.</p>
+                <div class="project-tags"><span class="tag">AWS</span><span class="tag">EC2</span><span class="tag">Linux</span><span class="tag">SSH</span></div>
+                <a href="https://drive.google.com/drive/folders/1NY3oLGmL78gJujLuJ2X99Dj9B-ZmpQY7?usp=drive_link" target="_blank" class="project-drive-btn"><i class="fa-brands fa-google-drive"></i> Lihat Dokumentasi</a>
+            </div>
+            <div class="project-card" data-cat="monitoring">
+                <div class="project-header"><div class="project-icon" style="background:linear-gradient(135deg,#22c55e,#15803d);"><i class="fa-solid fa-chart-line"></i></div><div class="project-links"><a href="https://drive.google.com/drive/folders/1n2MamLKlJ4hS3F7V4VMD_GRCauaGGI-y?usp=sharing" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+                <h3>Monitoring dengan Zabbix</h3><p>Monitoring host, service dan resource server menggunakan Zabbix dengan alert otomatis via email.</p>
+                <div class="project-tags"><span class="tag">Zabbix</span><span class="tag">Monitoring</span><span class="tag">Linux</span></div>
+                <a href="https://drive.google.com/drive/folders/1n2MamLKlJ4hS3F7V4VMD_GRCauaGGI-y?usp=sharing" target="_blank" class="project-drive-btn"><i class="fa-brands fa-google-drive"></i> Lihat Dokumentasi</a>
+            </div>
+            <div class="project-card" data-cat="server">
+                <div class="project-header"><div class="project-icon" style="background:linear-gradient(135deg,#1a6fd4,#0f4fa8);"><i class="fa-solid fa-server"></i></div><div class="project-links"><a href="https://drive.google.com/drive/folders/1RGIjuji5t7y7uNUBp22NY5u7T2I-FU5n?usp=drive_link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+                <h3>Linux Web Server</h3><p>Konfigurasi web server Nginx dan Apache di Ubuntu, termasuk virtual host, SSL/TLS, dan firewall UFW.</p>
+                <div class="project-tags"><span class="tag">Nginx</span><span class="tag">Apache</span><span class="tag">Ubuntu</span><span class="tag">SSL</span></div>
+                <a href="https://drive.google.com/drive/folders/1RGIjuji5t7y7uNUBp22NY5u7T2I-FU5n?usp=drive_link" target="_blank" class="project-drive-btn"><i class="fa-brands fa-google-drive"></i> Lihat Dokumentasi</a>
+            </div>
+            <div class="project-card" data-cat="monitoring">
+                <div class="project-header"><div class="project-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9);"><i class="fa-solid fa-shield-halved"></i></div><div class="project-links"><a href="https://drive.google.com/drive/folders/1gJSyNKVv0MV0gz5j6vJTziPmhIFK5ntr?usp=drive_link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+                <h3>Cybersecurity</h3><p>Upaya melindungi sistem, jaringan, dan data dari serangan atau akses yang tidak sah.</p>
+                <div class="project-tags"><span class="tag">Cybersecurity</span><span class="tag">Network Security</span><span class="tag">Linux</span></div>
+                <a href="https://drive.google.com/drive/folders/1gJSyNKVv0MV0gz5j6vJTziPmhIFK5ntr?usp=drive_link" target="_blank" class="project-drive-btn"><i class="fa-brands fa-google-drive"></i> Lihat Dokumentasi</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SERTIFIKAT ═══════════════════ -->
+<section id="certificates" class="sp-section reveal">
+    <div class="sp-header">
+        <div class="page-tag"><i class="fa-solid fa-certificate"></i> &nbsp;Sertifikat</div>
+        <h2 class="sp-title">Pencapaian & <span>Sertifikasi</span></h2>
+        <p class="sp-sub">Klik sertifikat untuk melihat detailnya</p>
+    </div>
+    <div class="section-content">
+        <div class="cert-cards-grid reveal">
+            <a href="certificate-detail.html?id=cybersec" class="cert-full-card cert-clickable">
+                <div class="cert-card-top" style="background:linear-gradient(135deg,#ef4444,#b91c1c);">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div class="cert-badge-label">Security</div>
+                    <div class="cert-view-hint"><i class="fa-solid fa-eye"></i> Lihat</div>
+                </div>
+                <div class="cert-card-body">
+                    <div class="cert-issuer"><i class="fa-solid fa-building"></i> Cisco NetAcad</div>
+                    <h3>Cybersecurity Essentials</h3>
+                    <p>Dasar-dasar keamanan siber, ancaman, serangan, dan cara melindungi sistem jaringan.</p>
+                    <div class="cert-meta"><span><i class="fa-regular fa-calendar"></i> 2024</span><span><i class="fa-solid fa-tag"></i> Cybersecurity</span></div>
+                    <div class="cert-enter-btn"><span>Lihat Sertifikat</span><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </a>
+            <a href="certificate-detail.html?id=linux" class="cert-full-card cert-clickable">
+                <div class="cert-card-top" style="background:linear-gradient(135deg,#f59e0b,#d97706);">
+                    <i class="fa-brands fa-linux"></i>
+                    <div class="cert-badge-label">Linux</div>
+                    <div class="cert-view-hint"><i class="fa-solid fa-eye"></i> Lihat</div>
+                </div>
+                <div class="cert-card-body">
+                    <div class="cert-issuer"><i class="fa-brands fa-linux"></i> NDG / Cisco</div>
+                    <h3>Linux Fundamental</h3>
+                    <p>Fondasi sistem operasi Linux, command line, manajemen file, user, dan proses.</p>
+                    <div class="cert-meta"><span><i class="fa-regular fa-calendar"></i> 2024</span><span><i class="fa-solid fa-tag"></i> Linux</span></div>
+                    <div class="cert-enter-btn"><span>Lihat Sertifikat</span><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </a>
+            <a href="certificate-detail.html?id=introcybersec" class="cert-full-card cert-clickable">
+                <div class="cert-card-top" style="background:linear-gradient(135deg,#6366f1,#4f46e5);">
+                    <i class="fa-solid fa-lock"></i>
+                    <div class="cert-badge-label">Security</div>
+                    <div class="cert-view-hint"><i class="fa-solid fa-eye"></i> Lihat</div>
+                </div>
+                <div class="cert-card-body">
+                    <div class="cert-issuer"><i class="fa-solid fa-building"></i> Cisco NetAcad</div>
+                    <h3>Introduction to Cybersecurity</h3>
+                    <p>Pengenalan dunia keamanan siber, tren ancaman global, dan karir di bidang keamanan digital.</p>
+                    <div class="cert-meta"><span><i class="fa-regular fa-calendar"></i> 2024</span><span><i class="fa-solid fa-tag"></i> Cybersecurity</span></div>
+                    <div class="cert-enter-btn"><span>Lihat Sertifikat</span><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </a>
+            <a href="certificate-detail.html?id=vm" class="cert-full-card cert-clickable">
+                <div class="cert-card-top" style="background:linear-gradient(135deg,#22c55e,#15803d);">
+                    <i class="fa-solid fa-server"></i>
+                    <div class="cert-badge-label">Virtualisasi</div>
+                    <div class="cert-view-hint"><i class="fa-solid fa-eye"></i> Lihat</div>
+                </div>
+                <div class="cert-card-body">
+                    <div class="cert-issuer"><i class="fa-solid fa-building"></i> VMware / NetAcad</div>
+                    <h3>Virtual Machine Fundamental</h3>
+                    <p>Dasar-dasar virtualisasi, instalasi dan konfigurasi virtual machine menggunakan VirtualBox/VMware.</p>
+                    <div class="cert-meta"><span><i class="fa-regular fa-calendar"></i> 2024</span><span><i class="fa-solid fa-tag"></i> Virtualisasi</span></div>
+                    <div class="cert-enter-btn"><span>Lihat Sertifikat</span><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ KONTAK ═══════════════════ -->
+<section id="contact" class="sp-section reveal">
+    <div class="sp-header">
+        <div class="page-tag"><i class="fa-solid fa-envelope"></i> &nbsp;Kontak</div>
+        <h2 class="sp-title">Mari <span>Terhubung</span></h2>
+        <p class="sp-sub">Hubungi saya untuk kolaborasi, diskusi, atau sekadar menyapa</p>
+    </div>
+    <div class="section-content">
+        <div class="contact-wrapper reveal">
+            <div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div><span class="contact-label">Email</span><a href="mailto:muhamadrajibsyahputra@smkwikrama.sch.id">muhamadrajibsyahputra@smkwikrama.sch.id</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div><span class="contact-label">Telepon / WhatsApp</span><a href="tel:081617681430">081617681430</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-brands fa-instagram"></i></div>
+                        <div><span class="contact-label">Instagram</span><a href="https://www.instagram.com/boyzjiboyz77_/" target="_blank">@boyzjiboyz77_</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
+                        <div><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/in/muhammad-rajib-syah-putra-096125414/" target="_blank">Muhammad Rajib Syah Putra</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div><span class="contact-label">Lokasi</span><span>Bogor, Jawa Barat, Indonesia</span></div>
+                    </div>
+                </div>
+                <div class="social-links" style="margin-top:20px;">
+                    <a href="https://www.instagram.com/boyzjiboyz77_/" target="_blank" class="social-link"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+                    <a href="https://www.linkedin.com/in/muhammad-rajib-syah-putra-096125414/" target="_blank" class="social-link"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+                    <a href="mailto:muhamadrajibsyahputra@smkwikrama.sch.id" class="social-link"><i class="fa-solid fa-envelope"></i><span>Email</span></a>
+                    <a href="tel:081617681430" class="social-link"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm"
+                  action="https://formsubmit.co/muhamadrajibsyahputra@smkwikrama.sch.id" method="POST">
+                <input type="hidden" name="_subject" value="Pesan Baru dari Portfolio Rajib!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="Terima kasih sudah menghubungi Rajib! Pesan kamu sudah diterima dan akan segera dibalas.">
+                <input type="hidden" name="_replyto" value="">
+                <input type="hidden" name="_next" value="https://muhamadrajib.github.io/#contact">
+                <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:4px;">Kirim Pesan</h3>
+                <p style="color:var(--gray);font-size:0.82rem;margin-bottom:8px;">Isi form dan saya akan membalas secepatnya</p>
+                <div class="form-group"><label>Nama</label><input type="text" name="Nama" placeholder="Nama kamu" required/></div>
+                <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="email@kamu.com" required/></div>
+                <div class="form-group"><label>Subjek</label><input type="text" name="Subjek" placeholder="Subjek pesan"/></div>
+                <div class="form-group"><label>Pesan</label><textarea name="Pesan" rows="4" placeholder="Tulis pesanmu di sini..." required></textarea></div>
+                <button type="submit" class="btn btn-primary btn-full"><i class="fa-solid fa-paper-plane"></i> Kirim Pesan</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo"><span class="logo-bracket">&lt;</span>Rajib<span class="logo-bracket">/&gt;</span></div>
+        <p id="footerYear"></p>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/boyzjiboyz77_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/muhammad-rajib-syah-putra-096125414/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:muhamadrajibsyahputra@smkwikrama.sch.id"><i class="fa-solid fa-envelope"></i></a>
+            <a href="tel:081617681430"><i class="fa-solid fa-phone"></i></a>
+        </div>
+    </div>
+</footer>
+
+<button class="back-to-top" id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
+<script src="app.js"></script>
+<script src="certificates-data.js"></script>
+</body>
+</html>
